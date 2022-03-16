@@ -1,0 +1,132 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat; }
+
+li {
+  list-style-type: none; }
+
+.btn {
+  background-color: #ff3232;
+  color: #fff; }
+
+.list-flex-x-axis {
+  display: flex;
+  align-items: center; }
+
+a:visited,
+a:not(visited) {
+  color: #000; }
+
+.form-floating > .form-select {
+  font-size: calc(0.4rem + 1vmin);
+  height: calc(3rem + 1vmin); }
+
+.form-control:not(:placeholder-shown) {
+  font-size: calc(0.4rem + 1vmin);
+  height: calc(2.7rem + 1vmin); }
+
+.alert {
+  position: absolute !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center;
+  transform: translateY(-30%);
+  animation-name: animate-alert;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-timing-function: ease-in;
+  z-index: 20; }
+
+body {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden; }
+  body nav {
+    width: 100%;
+    height: 16%;
+    background-color: #fff; }
+    body nav .list-flex-x-axis {
+      width: 100%;
+      height: 100%;
+      justify-content: space-evenly; }
+      body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis {
+        justify-content: center; }
+        body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis li:first-child {
+          flex: 1;
+          background-color: #ffad0e;
+          color: #fff;
+          text-align: center;
+          font-weight: 600;
+          font-size: 1rem;
+          height: 2.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 3rem; }
+        body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis li:nth-child(2) {
+          flex: 2;
+          text-align: center; }
+          body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis li:nth-child(2) strong {
+            font-size: 0.8rem; }
+          body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis li:nth-child(2) h5 {
+            font-size: 0.45rem; }
+      body nav .list-flex-x-axis li:nth-child(n + 2) a {
+        font-size: 0.8rem; }
+  body main {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffad0e;
+    display: flex;
+    position: relative; }
+    body main .section-promo-area {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 50px;
+      color: #fff; }
+      body main .section-promo-area strong {
+        font-size: 1.7rem !important; }
+      body main .section-promo-area h2 {
+        font-size: 1.4rem !important; }
+      body main .section-promo-area img {
+        width: 60%;
+        object-fit: contain; }
+    body main .section-selection-area {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      flex: 1.4;
+      height: 100%;
+      justify-content: center;
+      align-items: center; }
+      body main .section-selection-area .container {
+        line-height: 1.6rem !important; }
+        body main .section-selection-area .container h6 {
+          font-size: 1rem !important;
+          font-weight: 600; }
+        body main .section-selection-area .container label {
+          font-size: 0.8rem !important;
+          max-width: 150px; }
+    body main .section-result-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding-left: 50px; }
+      body main .section-result-area h2 {
+        font-size: 1rem !important; }
+
+@keyframes animate-alert {
+  from {
+    transform: translateY(-100%); }
+  to {
+    transform: translateY(0%); } }

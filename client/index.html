@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet preload prefetch" href="./fonts.css" as="style" />
+		<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./style_comp/style.css" />
+		<script defer src="./build/app.bundle.js"></script>
+		<!--for uploading only-->
+		<!-- <script defer src="./src/uploadfile.js"></script> -->
+		<title>Конфигуратор доставки | Пилот</title>
+	</head>
+	<body>
+		<nav>
+			<ul class="list-flex-x-axis">
+				<li>
+					<div class="logo">
+						<ul class="list-flex-x-axis">
+							<li><strong>T</strong></li>
+							<li>
+								<strong> tarificator </strong>
+								<br />
+								<h5>industrial delivery</h5>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li><a href="#"> Isource </a></li>
+				<li><a href="#"> Радар </a></li>
+				<li><a href="#"> График </a></li>
+				<li><a href="#"> LogotechLab </a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<!--for uploading purposes-->
+			<!-- <form id="form">
+			<input type="file" name="fileupload" id="fileupload" accept=".csv" />
+			<input type="submit" name="submitfile" id="submitfile" />
+		</form> -->
+
+			<section class="section-promo-area">
+				<h2><strong> Тарификатор - </strong></h2>
+				<h2>рассчитает стоимость доставки,</h2>
+				<h2>определит ее сроки</h2>
+				<br />
+				<img src="./assets/Pic Truck.png" alt="truck pic" />
+			</section>
+
+			<section class="section-selection-area" id="section-selection-area">
+				<div class="container">
+					<h6>Дата погрузки:</h6>
+					<div class="form-floating">
+						<input type="date" placeholder="date" class="form-control" id="input-date-loading" />
+						<label for="input-date-loading"> Дата: </label>
+					</div>
+				</div>
+				<div class="container"></div>
+
+				<div class="container">
+					<h6>Погрузка:</h6>
+					<div class="form-floating">
+						<select class="form-select" id="select-country-onloading" aria-label="select-country-onloading">
+							<optgroup>
+								<option value="Украина">Украина</option>
+							</optgroup>
+						</select>
+						<label for="select-country-onloading">Страна*</label>
+					</div>
+					<br />
+					<div class="form-floating">
+						<select class="form-select" id="select-city-onloading" aria-label="select-city-onloading"></select>
+						<label for="select-city-onloading">Город*</label>
+					</div>
+				</div>
+
+				<div class="container">
+					<h6>Разгрузка:</h6>
+					<div class="form-floating">
+						<select class="form-select" id="select-country-offloading" aria-label="select-country-offloading">
+							<optgroup>
+								<option value="Украина">Украина</option>
+							</optgroup>
+						</select>
+						<label for="select-country-offloading">Страна*</label>
+					</div>
+					<br />
+					<div class="form-floating">
+						<select class="form-select" id="select-city-offloading" aria-label="select-city-offloading"></select>
+						<label for="select-city-offloading">Город*</label>
+					</div>
+				</div>
+
+				<div class="container">
+					<h6>Транспорт:</h6>
+					<div class="form-floating">
+						<select class="form-select" id="select-transport-mode" aria-label="select-transport-mode">
+							<optgroup>
+								<option value="Авто">Авто</option>
+							</optgroup>
+						</select>
+						<label for="select-transport-mode">Вид транспорта*</label>
+					</div>
+					<br />
+					<div class="form-floating">
+						<select
+							class="form-select"
+							id="select-truck-transport-body"
+							aria-label="select-truck-transport-body"
+						></select>
+						<label for="select-truck-transport-body">Тип кузова*</label>
+					</div>
+					<br />
+					<div class="form-floating">
+						<select
+							class="form-select"
+							id="select-truck-transport-tonnage"
+							aria-label="select-truck-transport-tonnage"
+						></select>
+						<label for="select-truck-transport-tonnage">Тоннаж*</label>
+					</div>
+				</div>
+
+				<div class="container">
+					<h6>Доп. услуги:</h6>
+					<div class="container-extra-features">
+						<input type="checkbox" id="checkbox-insurance" /> &nbsp;
+						<label for="checkbox-insurance">Страхование груза</label>
+						<br />
+
+						<input type="checkbox" id="checkbox-tracking" /> &nbsp;
+						<label for="checkbox-tracking">GPS-трекинг</label>
+						<br />
+
+						<input type="checkbox" id="checkbox-warehouse" /> &nbsp;
+						<label for="checkbox-warehouse">Необходимо место хранения</label>
+						<br />
+					</div>
+				</div>
+
+				<button class="btn btn-lg btn-calculate-results" aria-pressed="true" id="btn-calculate-results" data-current="Get">
+					Рассчитать тариф
+				</button>
+			</section>
+
+			<section class="section-result-area" id="section-result-area"></section>
+		</main>
+		<!-- <ul class="list">
+			<li>Чтобы добавить маркер, нажмите кнопку "Добавить"</li>
+			<li>Чтобы переместить маркер, щелкните его и переместите мышкой"</li>
+			<li>Чтобы отпустить текущий маркер, кликните дважды</li>
+		</ul>
+		<div id="map"></div>
+		<div id="controls">
+			<button id="setMarker_A">Добавить маркер A</button>
+			<button id="setMarker_B">Добавить маркер B</button>
+		</div>
+
+		<p id="distance-printout"></p> -->
+	</body>
+</html>

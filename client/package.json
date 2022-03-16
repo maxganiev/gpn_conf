@@ -1,0 +1,28 @@
+{
+  "name": "babel_webpack_starter",
+  "version": "1.0.0",
+  "description": "Starter pack for compiling ES6+ apps to ES5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --output-public-path=/build/  --mode development --progress --open --hot",
+    "build": "webpack --mode production --progress",
+    "sass": "node-sass -w style_precomp/ -o style_comp/ --recursive",
+    "watch": "webpack --watch",
+    "dev": "concurrently \"npm run watch\" \"npm run sass\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "node-sass": "^7.0.1"
+  }
+}
