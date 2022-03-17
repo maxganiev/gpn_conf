@@ -92,11 +92,11 @@ export const dataObj = {
 		}
 		
 		<p> Планируемый срок доставки: ${this.deliveryTime} суток. </p>
-		'<button class="btn btn-sm btn-getOffer" id="btn-getOffer"> ${
+		<button class="btn btn-sm btn-getOffer" id="btn-getOffer"> ${
 			!this.warehouseIsNeeded
 				? 'Получить персональное предложение'
 				: 'Получить персональное предложение и уточнить точку хранения'
-		} </button>'
+		} </button>
 
 		`;
 	},
