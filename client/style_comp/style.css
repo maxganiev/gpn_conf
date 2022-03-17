@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Montserrat; }
+  font-family: 'Montserrat', sans-serif; }
 
 li {
   list-style-type: none; }
@@ -24,6 +24,8 @@ a:not(visited) {
 .form-floating > .form-select {
   font-size: calc(0.4rem + 1vmin);
   height: calc(3rem + 1vmin); }
+  .form-floating > .form-select:hover {
+    cursor: pointer; }
 
 .form-control:not(:placeholder-shown) {
   font-size: calc(0.4rem + 1vmin);
@@ -43,6 +45,16 @@ a:not(visited) {
   animation-timing-function: ease-in;
   z-index: 20; }
 
+.span-red {
+  color: #ff3232 !important; }
+
+.span-bold {
+  font-weight: 700; }
+
+.span-underscore {
+  font-weight: 400;
+  font-size: 0.7rem; }
+
 body {
   width: 100%;
   height: 100vh;
@@ -59,12 +71,12 @@ body {
       body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis {
         justify-content: center; }
         body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis li:first-child {
-          flex: 1;
-          background-color: #ffad0e;
+          flex: 0.8;
+          background-color: #ffb001;
           color: #fff;
           text-align: center;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 2rem;
           height: 2.5rem;
           display: flex;
           justify-content: center;
@@ -74,56 +86,79 @@ body {
           flex: 2;
           text-align: center; }
           body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis li:nth-child(2) strong {
-            font-size: 0.8rem; }
+            font-size: 1rem; }
           body nav .list-flex-x-axis li:first-child .logo .list-flex-x-axis li:nth-child(2) h5 {
-            font-size: 0.45rem; }
+            font-size: 0.7rem; }
       body nav .list-flex-x-axis li:nth-child(n + 2) a {
-        font-size: 0.8rem; }
+        font-size: 0.7rem; }
   body main {
     width: 100%;
-    height: 100vh;
-    background-color: #ffad0e;
+    height: 84%;
+    background-color: #ffb001;
     display: flex;
     position: relative; }
     body main .section-promo-area {
-      flex: 1.2;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       padding-left: 50px;
       color: #fff; }
-      body main .section-promo-area strong {
-        font-size: 1.7rem !important; }
+      body main .section-promo-area h2 strong {
+        font-size: 1.7rem !important;
+        font-weight: 700; }
       body main .section-promo-area h2 {
-        font-size: 1.4rem !important; }
+        font-size: 1.4rem !important;
+        font-weight: 400; }
       body main .section-promo-area img {
         width: 60%;
         object-fit: contain; }
     body main .section-selection-area {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      flex: 1.4;
-      height: 100%;
+      flex: 1.8;
+      height: 95%;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      transform: scale(0.85); }
       body main .section-selection-area .container {
         line-height: 1.6rem !important; }
         body main .section-selection-area .container h6 {
-          font-size: 1rem !important;
-          font-weight: 600; }
-        body main .section-selection-area .container label {
           font-size: 0.8rem !important;
-          max-width: 150px; }
+          font-weight: 700; }
+        body main .section-selection-area .container label {
+          font-size: 0.7rem !important; }
+        body main .section-selection-area .container .container-extra-features input[type='checkbox'] {
+          width: 15px;
+          height: 15px; }
+          body main .section-selection-area .container .container-extra-features input[type='checkbox']:hover {
+            cursor: pointer; }
     body main .section-result-area {
+      visibility: hidden;
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      padding-left: 50px; }
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0px 20px 0px 20px;
+      transform: scale(0.9);
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 25px 0px 0px 25px;
+      font-size: 0.8rem;
+      line-height: 1.8rem; }
       body main .section-result-area h2 {
         font-size: 1rem !important; }
+      body main .section-result-area .list {
+        padding-left: unset !important; }
+      body main .section-result-area .btn-getOffer {
+        font-weight: 700;
+        max-width: 70%;
+        font-size: 0.7rem;
+        margin: 0 auto;
+        transform: translateY(50px); }
+        body main .section-result-area .btn-getOffer:hover {
+          transition: all 0.6s ease-in; }
 
 @keyframes animate-alert {
   from {

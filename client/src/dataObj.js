@@ -1,4 +1,4 @@
-import { checkbox_insurance, checkbox_tracking, section_areaResults, btn_getResults } from './DOM';
+import { checkbox_insurance, checkbox_tracking, section_areaResults } from './DOM';
 
 export const dataObj = {
 	distance: 0,
@@ -52,12 +52,21 @@ export const dataObj = {
 		return this.deliveryTime;
 	},
 
-	printData: function (result) {
-		if (result === 0) {
-			return;
-		} else {
-			section_areaResults.innerHTML = `
-		<h1> <span class="red bold"> ${new Intl.NumberFormat('ru-RU').format(this.result.toFixed(0))} &#8381; </span> </h1>
+	printData: function () {
+		if (window.getComputedStyle(section_areaResults).getPropertyValue('visibility') === 'hidden') {
+			section_areaResults.style.visibility = 'visible';
+			section_areaResults.style.transform = 'translateX(100%)';
+
+			setTimeout(() => {
+				section_areaResults.style.transform = 'translateX(0%)';
+				section_areaResults.style.transition = 'transform 0.6s ease-out';
+			}, 100);
+		}
+
+		section_areaResults.innerHTML = `
+		<h1> <span class="span-red span-bold"> ${new Intl.NumberFormat('ru-RU').format(
+			this.result.toFixed(0)
+		)} &#8381; </span> <span class="span-underscore"> (в т.ч. НДС 20%) </span> </h1> 
 		${
 			this.insurance !== 0 || this.gps !== 0
 				? `
@@ -65,14 +74,14 @@ export const dataObj = {
 		<li> <u> в том числе: </u> </li>
 		${
 			this.insurance !== 0
-				? `<li> Страхование груза: <span class="red"> ${new Intl.NumberFormat('ru-RU').format(
+				? `<li> Страхование груза: <span class="span-red"> ${new Intl.NumberFormat('ru-RU').format(
 						(this.insurance * this.distance).toFixed(0)
 				  )} Р. </span>  </li>`
 				: ''
 		}
 		${
 			this.gps !== 0
-				? `<li> GPS-трекинг: <span class="red"> ${new Intl.NumberFormat('ru-RU').format(
+				? `<li> GPS-трекинг: <span class="span-red"> ${new Intl.NumberFormat('ru-RU').format(
 						this.gps.toFixed(0)
 				  )} Р. </span>  </li>`
 				: ''
@@ -82,15 +91,13 @@ export const dataObj = {
 				: ''
 		}
 		
-		${
-			this.warehouseIsNeeded !== false
-				? '<button class="btn btn-sm btn-getOffer" id="btn-getOffer"> Получить персональное предложение и уточнить точку хранения </button>'
-				: ''
-		}
 		<p> Планируемый срок доставки: ${this.deliveryTime} суток. </p>
-		`;
+		'<button class="btn btn-sm btn-getOffer" id="btn-getOffer"> ${
+			!this.warehouseIsNeeded
+				? 'Получить персональное предложение'
+				: 'Получить персональное предложение и уточнить точку хранения'
+		} </button>'
 
-			btn_getResults.innerText = 'Обновить тариф';
-		}
+		`;
 	},
 };

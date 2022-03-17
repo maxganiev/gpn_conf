@@ -37,6 +37,9 @@ export async function requestByCity() {
 			const res = await req.json();
 			dataObj.setDistance(Number(res[0].DISTANCE));
 			dataObj.setRatePerKm(Number(res[1].RATE));
+			dataObj.returnResult();
+			dataObj.returnDeliveryTime();
+			dataObj.printData();
 		} catch (error) {
 			console.log(error);
 		}
@@ -63,6 +66,9 @@ export async function requestByTruckType() {
 
 		const res = await req.json();
 		dataObj.setKoeffPerTruckBody(Number(res.koeff));
+		dataObj.returnResult();
+		dataObj.returnDeliveryTime();
+		dataObj.printData();
 	} catch (error) {
 		console.log(error);
 	}
@@ -83,6 +89,9 @@ export async function requestByTonnage() {
 
 		const res = await req.json();
 		dataObj.setKoeffPerTon(Number(res.koeff));
+		dataObj.returnResult();
+		dataObj.returnDeliveryTime();
+		dataObj.printData();
 	} catch (error) {
 		console.log(error);
 	}

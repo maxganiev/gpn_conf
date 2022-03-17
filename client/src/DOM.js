@@ -84,5 +84,4 @@ tonnage.forEach((ton, index) => {
 export const checkbox_insurance = document.getElementById('checkbox-insurance');
 export const checkbox_tracking = document.getElementById('checkbox-tracking');
 export const checkbox_warehouseIsNeeded = document.getElementById('checkbox-warehouse');
-export const btn_getResults = document.getElementById('btn-calculate-results');
 export const section_areaResults = document.getElementById('section-result-area');
