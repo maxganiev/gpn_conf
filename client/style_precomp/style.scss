@@ -127,10 +127,12 @@ body {
 
 							strong {
 								font-size: $fs-size-mid;
+								margin-left: 10px;
 							}
 
 							h5 {
 								font-size: $fs-size-sm;
+								margin-left: 10px;
 							}
 						}
 					}
@@ -175,7 +177,7 @@ body {
 				}
 
 				img {
-					width: 60%;
+					width: 100%;
 					object-fit: contain;
 				}
 			}
